@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>| Template 1 |</title>
+    <link rel="stylesheet" href="template2.css">
+    <link rel="stylesheet" href="temp2columns.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $("nav").accessibleDropDown();
+    });//end ready
+    $.fn.accessibleDropDown = function() {
+        var el = $(this);
+        $("a", el).focus(function(){
+            $(this).parents("li").addClass("hover");
+        }).blur(function(){
+            $(this).parents("li").removeClass("hover");
+        });
+    }
+    </script>
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Page Header</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Guitars</a>
+                        <ul>
+                            <li><a href="#">Acoustic</a></li>
+                            <li><a href="#">Electric</a></li>
+                            <li><a href="#">Bass</a></li>
+                            <li><a href="#">Special</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Services</a>
+                        <ul>
+                            <li><a href="#">Re-string</a></li>
+                            <li><a href="#">Repairs</a></li>
+                            <li><a href="#">Lessons</a></li>
+                            <li><a href="#">Consignment</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Information</a>
+                        <ul>
+                            <li><a href="#">Sub-Topic 1</a></li>
+                            <li><a href="#">Sub-Topic 2</a></li>
+                            <li><a href="#">Sub-Topic 3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Contact</a></li>
+                </ul> 
+            </nav>
+        </header>
+        <aside>
+            <p>The sidebar content</p>
+                <p>The sidebar content</p>
+                <p>The sidebar content</p>
+                <p>The sidebar content</p>
+                <p>The sidebar content</p>
+                <p>The sidebar content</p>
+                <p>The sidebar content</p>
+        </aside>
+        <section>
+            <article>
+                <h2>Article One Heading</h2>
+                <p>Article One Content</p>
+                <img src="images/pic07.jpg" alt="an image" class="rgt">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+            </article>
+
+            <p class="spec"></p>
+            <article class="cols">
+                <h2 class="cols-span">Sed dignissim lacinia nunc</h2>
+                <p class="lead cols-span">Populo noluisse ex qui, in mea wisi lorem ridens. Cu quas primis ius, vix id purto elit nostrum, eu his aperiri corpora volutpat.</p>
+                <p>Pri saperet menandri in, ius tota suscipit definitionem ad. An nominati maiestatis usu, no prima tempor erroribus has.
+                </p>
+                <p>
+                  Te quo ludus munere timeam, enim alienum euripidis cu eam, elitr moderatius eloquentiam mei eu. Laoreet maluisset neglegentur vel no. No sensibus temporibus reformidans per. Ne sea habeo pertinax, errem quaeque ancillae eos ne. Nam animal fabulas suavitate at. 
+                </p>
+            </article>
+        </section>
+        <aside class="ads">
+            <p>Advertisment can run the size out to the margin of the previous container element, no more!</p>
+            <p>Advertisment</p>
+            <p>Advertisment</p>
+            <p>Advertisment</p>
+            <p>Advertisment</p>
+
+        </aside>
+        <footer>
+            <p>Copyright @ 2020 All Rights Reserved</p>
+        </footer>
+    </div>
+</body>
+</html>
