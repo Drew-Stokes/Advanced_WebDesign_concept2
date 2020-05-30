@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>| Template 1 |</title>
+    <link rel="stylesheet" href="slider.css" media="screen">
+    <link href="css/anythingslider.css" rel="stylesheet">
+    <link href="css/theme-metallic.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/jquery.anythingslider.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $("nav").accessibleDropDown();
+        $('#slider3').anythingSlider({
+                        theme : 'metallic',
+                        expand :false,
+                        resizeContents :true,
+                        aspectRation : true,
+                        showMultiple : 1,
+                        changeBy    : 1,
+                        startPanel  :1,
+                        autoPlay    :true
+        })
+        .find('.panel')
+        .find('div[class*=caption]').css(
+            {
+                positon: 'absolute'
+            })
+            .end()
+            .hover(function(){
+                showCaptions( $(this));
+            },
+            function() {
+                hideCaptions( $(this));
+            }
+            );// end slider
+            showCaptions = function(el) {
+                var $this = el;
+                if ($this.find('.caption-bottom').length) {
+                    $this.find('.caption-bottom')
+                    .show()
+                    .animate({ bottom: 0, opacity: 1}, 400);
+                }
+            };
+            hideCaptions = function(el){
+                var $this = el;
+                if ($this.find('.caption-bottom').length){
+                    $this.find('.caption-bottom')
+                    .stop()
+                    .animate({ bottom: -50, opacity: 0}, 350, function(){
+                        $this.find('.caption-bottom').hide(); 
+                    });
+                }
+            };
+            hideCaptions( $('#slider3 .panel'));
+    });//end ready
+    $.fn.accessibleDropDown = function() {
+        var el = $(this);
+        $("a", el).focus(function(){
+            $(this).parents("li").addClass("hover");
+        }).blur(function(){
+            $(this).parents("li").removeClass("hover");
+        });
+    }
+    </script>
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Guitar Shop</h1>
+            <nav>
+                <ul>
+                    <li><a href="slider.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Guitars</a>
+                        <ul>
+                            <li><a href="#">Acoustic</a></li>
+                            <li><a href="#">Electric</a></li>
+                            <li><a href="#">Bass</a></li>
+                            <li><a href="#">Special</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Services</a>
+                        <ul>
+                            <li><a href="#">Re-string</a></li>
+                            <li><a href="#">Repairs</a></li>
+                            <li><a href="#">Lessons</a></li>
+                            <li><a href="#">Consignment</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Information</a>
+                        <ul>
+                            <li><a href="#">Sub-Topic 1</a></li>
+                            <li><a href="#">Sub-Topic 2</a></li>
+                            <li><a href="#">Sub-Topic 3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Contact</a></li>
+                </ul> 
+            </nav>
+        </header>
+        <aside>
+            <p>The sidebar content</p>
+                <p>The sidebar content</p>
+                <p>The sidebar content</p>
+                <p>The sidebar content</p>
+                <p>The sidebar content</p>
+                <p>The sidebar content</p>
+                <p>The sidebar content</p>
+        </aside>
+        <section>
+            <article><!-- reference point - don't addd another! -->
+            <ul id="slider3">
+                <li>
+                    <!-- Note this caption is before the image, all others it is after -->
+                    <div class="caption-top">
+                        Nothing like a little LP Goldtop to get you going!
+                    </div>
+                    <a href="descPage1.html">
+                        <img src="images/guitar01.jpg" alt=""></a>
+                    </a>
+                </li>
+                <li>
+                    <a href="descPage2.html">
+                        <img src="images/guitar02.jpg" alt="">
+                    </a>
+                    <div class="caption-right">
+                        Acoustic blues can be so much fun!
+                    </div>
+                </li>
+                <li>
+                    <a href="descPage3.html">
+                    <img src="images/guitar03.jpg" alt=""></a>
+                    <div class="caption-bottom">
+                        Ebony Fretboard and brass wond Elixir strings
+                    </div>
+                </li>
+                <li>
+                    <a href="descPage4.html">
+                    <img src="images/guitar04.jpg" alt="">
+                    </a>
+                    <div class="caption-left">
+                        step on up and play us a tune.
+                    </div>
+                </li>
+            </ul>
+                
+                
+            </article><!-- reference point -don't add another! -->
+
+            <p class="spec"></p>
+            <article class="cols">
+                <h2 class="cols-span">Sed dignissim lacinia nunc</h2>
+                <p class="lead cols-span">Populo noluisse ex qui, in mea wisi lorem ridens. Cu quas primis ius, vix id purto elit nostrum, eu his aperiri corpora volutpat.</p>
+                <p>Pri saperet menandri in, ius tota suscipit definitionem ad. An nominati maiestatis usu, no prima tempor erroribus has.
+                </p>
+                <p>
+                  Te quo ludus munere timeam, enim alienum euripidis cu eam, elitr moderatius eloquentiam mei eu. Laoreet maluisset neglegentur vel no. No sensibus temporibus reformidans per. Ne sea habeo pertinax, errem quaeque ancillae eos ne. Nam animal fabulas suavitate at. 
+                </p>
+            </article>
+        </section>
+        <footer>
+            <p>Copyright @ 2020 All Rights Reserved</p>
+        </footer>
+    </div>
+</body>
+</html>
